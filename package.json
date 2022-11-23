@@ -1,9 +1,6 @@
 {
   "name": "ui-components",
   "packageManager": "yarn@3.2.4",
-  "scripts": {
-    "tsc": "tsc -w"
-  },
   "dependencies": {
     "eslint": "^8.28.0"
   },
