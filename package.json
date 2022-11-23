@@ -1,13 +1,16 @@
 {
   "name": "ui-components",
   "packageManager": "yarn@3.2.4",
+  "type": "module",
   "scripts": {
+    "server": "lite-server --baseDir=\"dist\"",
     "tsc": "tsc -w"
   },
   "dependencies": {
     "eslint": "^8.28.0"
   },
   "devDependencies": {
+    "lite-server": "^2.6.1",
     "typescript": "^4.9.3"
   }
 }
