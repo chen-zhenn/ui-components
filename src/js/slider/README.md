@@ -31,4 +31,4 @@ slide.animate()
 ```
 
 ### :boom: Boom!
-#### :stuck_out_tongue_winking_eye: That's all folks!
+### :stuck_out_tongue_winking_eye: That's all folks!
