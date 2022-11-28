@@ -129,5 +129,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#
+# Typescript
 tsconfig.json
+
+# Sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
