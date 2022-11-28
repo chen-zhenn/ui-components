@@ -39,6 +39,7 @@ export abstract class Slide implements Islide {
     this.move();
     this.setProgressTimer(progressTimer);
     this.renderProgressBar(progressTimer);
+    this.setNavActive(nextIndex)
     this.animate();
   }
 
@@ -57,6 +58,7 @@ export abstract class Slide implements Islide {
     this.move();
     this.setProgressTimer(progressTimer);
     this.renderProgressBar(progressTimer);
+    this.setNavActive(prevIndex)
     this.animate();
   }
 
