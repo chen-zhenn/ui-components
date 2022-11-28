@@ -29,3 +29,6 @@ __2.__ Call the method which animate slider
 ...
 slide.animate()
 ```
+
+#### :boom: Boom!
+#### :stuck_out_tongue_winking_eye: That's all folks!
