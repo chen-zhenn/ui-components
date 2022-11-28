@@ -1,4 +1,4 @@
-import { Slider } from "./banner/Slider.js"
+import { Slider } from "./slider/Slider.js"
 
 addEventListener("DOMContentLoaded", (e) => {
   const $wrap: HTMLElement | null = document.getElementById("hero");
