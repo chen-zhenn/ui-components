@@ -8,7 +8,7 @@ __wrap__: A selector container to slider.
 __items__: A array of object containing elements to banner as image, dimensions and etc.  
 __time__: A number to timer of slider.  
 
-**I.e**:
+**i.e**:
 
 ```
 const items = [{
