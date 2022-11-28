@@ -4,9 +4,9 @@
 
 __1.__ Create a instance of class Slider passing the following parameters:
 
-__wrap__: A selector container to slider.
-__items__: A array of object containing elements to banner as image, dimensions e etc.
-__time__: A number to timer of slider
+__wrap__: A selector container to slider.  
+__items__: A array of object containing elements to banner as image, dimensions e etc.  
+__time__: A number to timer of slider.  
 
 **I.e**:
 
