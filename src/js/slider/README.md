@@ -11,7 +11,7 @@ Ui component totally reusable and configurable, without any additional libraries
 
 * __Configurable__
 * __Reusable__
-* __Adaptive to screen__
+* __Adaptive to screen__  
     > **Note:** Is not responsive style, and but an adaptive approach.
 
 ### How use
