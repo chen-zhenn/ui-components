@@ -1,6 +1,8 @@
 <div align="center">
-    <img src="../../assets/demo.gif">
+    <img src="../../assets/demo.gif" title="Demo Ui component Banner Slider" alt="Demo Ui component Banner Slider">
 </div>
+
+---
 ### How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
