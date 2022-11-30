@@ -1,4 +1,6 @@
-![Demo Ui component Banner Slider](../../assets/demo.gif)
+<div align="center">
+    <img src="../../assets/demo.gif">
+</div>
 ### How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
