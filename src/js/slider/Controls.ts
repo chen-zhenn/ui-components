@@ -24,13 +24,13 @@ export abstract class Controls extends Slide {
       {
         type: "prev",
         elem: "div",
-        label: "Voltar",
+        label: "Prev",
         order: 0,
       },
       {
         type: "pause",
         elem: "div",
-        label: "Pausar",
+        label: "Pause",
         order: 1,
       },
       {
@@ -42,11 +42,12 @@ export abstract class Controls extends Slide {
       {
         type: "next",
         elem: "div",
-        label: "Avançar",
+        label: "Next",
         order: 3,
       },
     ];
 
+    $controlWrap.setAttribute("id", "controls");
     $controlWrap.setAttribute("class", "banner__control");
     $controlPrimary.setAttribute("class", "banner__control_primary -primary");
     $controlSecondary.setAttribute(
@@ -64,14 +65,18 @@ export abstract class Controls extends Slide {
 
     for (let item in controls) {
       const $control = document.createElement(`${controls[item].elem}`);
+      const $controlLabel = document.createElement("span")
 
       $control.setAttribute("id", `control-${controls[item].type}`);
       $control.setAttribute(
         "class",
         `banner__control_item -${controls[item].type}`
       );
+      $controlLabel.setAttribute("class", "banner__control_label")
 
-      $control.insertAdjacentHTML("beforeend", controls[item].label);
+      $controlLabel.insertAdjacentHTML("beforeend", controls[item].label);
+
+      $control.insertAdjacentElement("beforeend", $controlLabel);
       $controlPrimary.insertAdjacentElement("beforeend", $control);
     }
 
@@ -139,5 +144,15 @@ export abstract class Controls extends Slide {
     const $controlNav = Array.from(document.querySelectorAll(".control-nav"))
     for(let $nav of $controlNav) $nav.classList.remove("active")
     $controlNav[index].classList.add("active")
+  }
+
+  setPaused(){
+    const $controlPause = document.getElementById("controls");
+    $controlPause?.classList.add("-paused")
+  }
+
+  setPlaying(){
+    const $controlPause = document.getElementById("controls");
+    $controlPause?.classList.remove("-paused")
   }
 }

@@ -18,10 +18,12 @@ export abstract class Slide implements Islide {
 
   public pause(): void {
     clearInterval(this.slideinterval);
+    this.setPaused()
   }
 
   public play(): void {
     this.animate();
+    this.setPlaying()
   }
 
   public next(): void {
@@ -39,7 +41,8 @@ export abstract class Slide implements Islide {
     this.move();
     this.setProgressTimer(progressTimer);
     this.renderProgressBar(progressTimer);
-    this.setNavActive(nextIndex)
+    this.setNavActive(nextIndex);
+    this.setItemActive(nextIndex);
     this.animate();
   }
 
@@ -58,22 +61,24 @@ export abstract class Slide implements Islide {
     this.move();
     this.setProgressTimer(progressTimer);
     this.renderProgressBar(progressTimer);
-    this.setNavActive(prevIndex)
+    this.setNavActive(prevIndex);
+    this.setItemActive(prevIndex);
     this.animate();
   }
 
-  public nav(index?:number | null):void{
-    const navIndex = parseInt(`${index}`)
+  public nav(index?: number | null): void {
+    const navIndex = parseInt(`${index}`);
     const images = this.itemsList;
     const progressTimer = navIndex / (images.length - 1);
-    
+
     clearInterval(this.slideinterval);
     this.setIndex(navIndex);
     this.setTranslate();
     this.move();
     this.setProgressTimer(progressTimer);
     this.renderProgressBar(progressTimer);
-    this.setNavActive(navIndex)
+    this.setNavActive(navIndex);
+    this.setItemActive(navIndex);
     this.animate();
   }
 
@@ -100,7 +105,8 @@ export abstract class Slide implements Islide {
       self.move();
       self.setProgressTimer(progressTimer);
       self.renderProgressBar(progressTimer);
-      self.setNavActive(currentIndex)
+      self.setNavActive(currentIndex);
+      self.setItemActive(currentIndex);
     }
   }
 
@@ -130,5 +136,11 @@ export abstract class Slide implements Islide {
 
   abstract renderProgressBar(n: number): void;
 
-  abstract setNavActive(index:number):void
+  abstract setNavActive(index: number | string): void;
+
+  abstract setItemActive(index: number | string): void;
+
+  abstract setPaused():void
+
+  abstract setPlaying():void
 }

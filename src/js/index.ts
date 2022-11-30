@@ -10,28 +10,32 @@ function init($wrap: HTMLElement | null): void {
   const items = [
     {
       image: "assets/b-1.jpg",
-      title: "Legenda da imagem 1",
+      title: "Cyberpunk City",
+      desc: "A picture is worth a thousand words!",
       width: 1920,
       height: 960,
       order: 1
     },
     {
       image: "assets/b-2.jpg",
-      title: "Legenda da imagem 2",
+      title: "Lights City",
+      desc: "A picture is worth a thousand words!",
       width: 1920,
       height: 960,
       order: 2
     },
     {
       image: "assets/b-3.jpg",
-      title: "Legenda da imagem 3",
+      title: "Surrealism art",
+      desc: "A picture is worth a thousand words!",
       width: 1920,
       height: 960,
       order: 3
     },
     {
       image: "assets/b-4.jpg",
-      title: "Legenda da imagem 4",
+      title: "Concept art",
+      desc: "A picture is worth a thousand words!",
       width: 1920,
       height: 960,
       order: 4

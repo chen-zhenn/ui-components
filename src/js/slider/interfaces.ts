@@ -1,6 +1,7 @@
 export interface Iitems {
   image: string;
   title: string;
+  desc: string;
   width: number;
   height: number;
   order: number;

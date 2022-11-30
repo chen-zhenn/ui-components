@@ -40,12 +40,16 @@ export abstract class Banner extends Controls {
     for (let item in itemsList) {
       const $li = document.createElement("li");
       const $imageFig = document.createElement("figure");
-      const $imageTitle = document.createElement("figcaption");
+      const $imageCap = document.createElement("figcaption");
+      const $imageTitle = document.createElement("h4");
+      const $imageDesc = document.createElement("p");
       const $imgElem = document.createElement("img");
 
       $li.setAttribute("class", "banner__item");
       $imageFig.setAttribute("class", "banner__content -loading");
+      $imageCap.setAttribute("class", "banner__caption");
       $imageTitle.setAttribute("class", "banner__title");
+      $imageDesc.setAttribute("class", "banner__desc");
 
       $imgElem.setAttribute("src", `${itemsList[item].image}`);
       $imgElem.setAttribute("width", `${itemsList[item].width}`);
@@ -53,18 +57,30 @@ export abstract class Banner extends Controls {
       $imgElem.setAttribute("class", "banner__image");
 
       $list.insertAdjacentElement("beforeend", $li);
-      $imageTitle.insertAdjacentHTML("beforeend", itemsList[item].title);
+      $imageTitle.insertAdjacentHTML("beforeend", `${itemsList[item].title}`);
+      $imageDesc.insertAdjacentHTML("beforeend", `${itemsList[item].desc}`);
+      $imageCap.insertAdjacentElement("beforeend", $imageTitle);
+      $imageCap.insertAdjacentElement("beforeend", $imageDesc);
       $imageFig.insertAdjacentElement("beforeend", $imgElem);
-      $imageFig.insertAdjacentElement("beforeend", $imageTitle);
+      $imageFig.insertAdjacentElement("beforeend", $imageCap);
       $li.insertAdjacentElement("beforeend", $imageFig);
     }
 
     const $images = Array.from(document.querySelectorAll(".banner__image"));
+    const $bannerItem = Array.from(document.querySelectorAll(".banner__item"))
+
+    addEventListener("load", (e) => $bannerItem[0].classList.add("active"))
 
     for (let $image of $images) {
       $image.addEventListener("load", (e: Event) => {
         $image.parentElement?.classList.remove("-loading");
       });
     }
+  }
+
+  setItemActive(index:number){
+    const $bannerItem = Array.from(document.querySelectorAll(".banner__item"))
+    for(let $item of $bannerItem) $item.classList.remove("active")
+    $bannerItem[index].classList.add("active")
   }
 }
