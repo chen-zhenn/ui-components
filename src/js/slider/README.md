@@ -1,5 +1,4 @@
-## Image slider
-
+![Demo Ui component Banner Slider](../../assets/demo.gif)
 ### How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
