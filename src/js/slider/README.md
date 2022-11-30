@@ -3,6 +3,17 @@
 </div>
 
 ---
+
+### About
+
+Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
+### Features
+
+* __Configurable__
+* __Reusable__
+* __Adaptive to screen__
+    > **Note:** Is not responsive style, and but an adaptive approach.
+
 ### How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
