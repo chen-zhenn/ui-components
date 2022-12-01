@@ -3,12 +3,12 @@
   "packageManager": "yarn@3.2.4",
   "type": "module",
   "scripts": {
-    "copy": "cp -R src/assets dist/",
+    "copy": "mkdir dist; cp -R src/assets dist/",
     "sass": "sass --watch src/style/sass/main.sass dist/style/css/main.css --style compressed",
     "tsc": "tsc -w",
     "tpg": "yarn pug -w src/*.pug -o dist" ,
     "server": "yarn copy; lite-server --baseDir=\"dist\"",
-    "dev": "concurrently \"yarn sass\" \"yarn tpg\" \"yarn server\""
+    "dev": "concurrently \"yarn sass\" \"yarn tsc\" \"yarn tpg\" \"yarn server\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "latest",
