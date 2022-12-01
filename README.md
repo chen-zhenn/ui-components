@@ -10,6 +10,8 @@ All components write in Javascript follow the design pattern based to object ori
 
 * Typescript
 
+* Pug
+
 * Sass
 ## Components:
 
