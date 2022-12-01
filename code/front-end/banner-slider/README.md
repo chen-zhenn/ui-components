@@ -1,9 +1,8 @@
 <div align="center">
-    <img src="src/assets/demo.gif" title="Demo Ui component Banner Slider" alt="Demo Ui component Banner Slider">
+    <img src="src/assets/demo.2.gif" title="Demo Ui component Banner Slider" alt="Demo Ui component Banner Slider">
 </div>
 
 ---
-
 ## About
 
 Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
