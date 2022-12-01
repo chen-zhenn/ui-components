@@ -36,7 +36,7 @@ export abstract class Controls extends Slide {
       {
         type: "play",
         elem: "div",
-        label: "Play",
+        label: "on",
         order: 2,
       },
       {
