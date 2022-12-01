@@ -47,4 +47,19 @@ slide.animate()
 ```
 
 ### :boom: Boom!
+
+---
+### :rocket: Installation
+
+```
+yarn install
+yarn dev
+```
+
+__Production__:
+
+```
+yarn build
+``` 
+
 ### :stuck_out_tongue_winking_eye: That's all folks!
