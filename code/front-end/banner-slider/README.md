@@ -4,7 +4,7 @@
 
 ---
 
-### About
+## About
 
 Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
 ### Features
@@ -15,7 +15,7 @@ Ui component totally reusable and configurable, without any additional libraries
 
     > **Note:** Is not responsive style, and but an adaptive approach.
 
-### How use
+## How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
 
@@ -49,7 +49,7 @@ slide.animate()
 ### :boom: Boom!
 
 ---
-### :rocket: Installation
+## :rocket: Installation
 
 ```
 yarn install
