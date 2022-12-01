@@ -51,6 +51,8 @@ slide.animate()
 ---
 ## :rocket: Installation
 
+In root project folder from **banner-slider**. Execute following command:
+
 ```
 yarn install
 yarn dev
