@@ -8,6 +8,7 @@ export abstract class Slide implements Islide {
   slideinterval: number = 0;
   translate: number = 0;
   progressTimer: number = 0;
+  state: number = 1
 
   container: HTMLElement;
 
@@ -17,16 +18,19 @@ export abstract class Slide implements Islide {
   }
 
   public pause(): void {
+    const state = this.setPaused()
     clearInterval(this.slideinterval);
-    this.setPaused()
+    this.setState(state)
   }
 
   public play(): void {
+    const state = this.setPlaying()
     this.animate();
-    this.setPlaying()
+    this.setState(state)
   }
 
   public next(): void {
+    const state = this.state
     const $container = this.container;
     const images = this.itemsList;
     const elemIndex = `${$container.getAttribute("data-index")}`;
@@ -34,6 +38,8 @@ export abstract class Slide implements Islide {
       this.index == parseInt(elemIndex) ? this.index : parseInt(elemIndex);
     const nextIndex = index + 1 < images.length ? index + 1 : images.length - 1;
     const progressTimer = nextIndex / (images.length - 1);
+
+    if(!state) return
 
     clearInterval(this.slideinterval);
     this.setIndex(nextIndex);
@@ -47,6 +53,7 @@ export abstract class Slide implements Islide {
   }
 
   public prev(): void {
+    const state = this.state
     const $container = this.container;
     const images = this.itemsList;
     const elemIndex = `${$container.getAttribute("data-index")}`;
@@ -54,6 +61,8 @@ export abstract class Slide implements Islide {
       this.index == parseInt(elemIndex) ? this.index : parseInt(elemIndex);
     const prevIndex = index ? index - 1 : 0;
     const progressTimer = prevIndex / (images.length - 1);
+
+    if(!state) return
 
     clearInterval(this.slideinterval);
     this.setIndex(prevIndex);
@@ -67,9 +76,12 @@ export abstract class Slide implements Islide {
   }
 
   public nav(index?: number | null): void {
+    const state = this.state
     const navIndex = parseInt(`${index}`);
     const images = this.itemsList;
     const progressTimer = navIndex / (images.length - 1);
+
+    if(!state) return
 
     clearInterval(this.slideinterval);
     this.setIndex(navIndex);
@@ -134,13 +146,17 @@ export abstract class Slide implements Islide {
     this.progressTimer = progress;
   }
 
+  setState(state:number): void {
+    this.state = state
+  }
+
   abstract renderProgressBar(n: number): void;
 
   abstract setNavActive(index: number | string): void;
 
   abstract setItemActive(index: number | string): void;
 
-  abstract setPaused():void
+  abstract setPaused(): number
 
-  abstract setPlaying():void
+  abstract setPlaying(): number
 }

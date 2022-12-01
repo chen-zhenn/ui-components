@@ -90,6 +90,7 @@ export abstract class Controls extends Slide {
     }
 
     addEventListener("load", (e) => {
+      const $controlWrap = document.getElementById("controls");
       const $controlNav = Array.from(document.querySelectorAll(".control-nav"));
       const $controlPrev = document.getElementById("control-prev");
       const $controlNext = document.getElementById("control-next");
@@ -100,9 +101,13 @@ export abstract class Controls extends Slide {
 
       for(let $nav of $controlNav) $nav
         .addEventListener("click", e => {
-            const navIndex = parseInt(`${$nav.getAttribute("data-index")}`)
-            self.nav(navIndex)
-            $nav.classList.add("active")
+          const state = $controlWrap?.classList.contains("-paused")
+          const navIndex = parseInt(`${$nav.getAttribute("data-index")}`)
+          
+          if(state) return
+          
+          self.nav(navIndex)
+          $nav.classList.add("active")
         })
       
       $controlPrev?.addEventListener("click", (e) => self.prev());
@@ -149,10 +154,12 @@ export abstract class Controls extends Slide {
   setPaused(){
     const $controlPause = document.getElementById("controls");
     $controlPause?.classList.add("-paused")
+    return 0
   }
 
   setPlaying(){
     const $controlPause = document.getElementById("controls");
     $controlPause?.classList.remove("-paused")
+    return 1
   }
 }
