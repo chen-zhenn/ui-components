@@ -13,4 +13,4 @@ All components write in Javascript follow the design pattern based to object ori
 * Sass
 ## Components:
 
-* :link: __Banner Slider__: :point_right: [See here](src/js/slider/)
+* :link: __Banner Slider__: :point_right: [See here](code/client/src/js/slider/)
