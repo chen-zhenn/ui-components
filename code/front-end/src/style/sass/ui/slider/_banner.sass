@@ -1,0 +1,240 @@
+.banner
+    position: relative
+    overflow: hidden
+    margin: auto
+    font-size: 5px
+    color: $color-secondary-dark
+    font-family: 'Roboto Condensed', sans-serif
+
+    &__container
+        position: relative
+        overflow: hidden
+        height: max-content
+        background-color: rgba(255, 255, 0, 0)
+        transition: transform .5s ease-in-out
+
+    &__list
+        position: relative
+        display: flex
+        width: 100%
+
+    &__item
+        position: relative
+        display: grid
+        width: 100%
+
+        &:nth-child(odd)
+            background-color: rgba(0, 0, 255, 0)
+        &:nth-child(even)
+            background-color: rgba(128,0,128,0)
+
+    &__content
+        position: relative
+        display: flex
+        display: grid
+        align-items: flex-end
+        grid-row: 1
+        grid-column: 1
+
+        &.-loading
+
+            &:after
+                content: url("../../assets/loader-spinner.png")
+                grid-row: 1
+                grid-column: 1
+                justify-self: center
+                align-self: center
+                color: $color-surface
+                z-index: 3
+                transform: scale(.6)
+
+    &__caption,
+    &__image
+        grid-row: 1
+        grid-column: 1
+
+    &__caption
+        position: relative
+        overflow: hidden
+        display: flex
+        flex-flow: column
+        max-width: 50%
+        min-height: min-content
+        padding-top: 1em
+        padding-bottom: 1em
+        padding-left: 40px
+        align-self: start
+        font-family: 'Oswald', sans-serif
+        font-size: 3em
+        color: $color-surface
+        background-color: rgba(0,0,0,.5)
+        transform: translate3d(40px,60px,0)
+
+        &:before
+            content: ""
+            position: absolute
+            display: block
+            top: 0
+            left: 0
+            min-width: .5rem
+            height: 100%
+            margin-right: 1rem
+            background-color: rgba(255,255,0,1)
+
+    &__image
+
+        .-loading &
+            // opacity: 0
+
+    &__title,
+    &__desc
+        margin: unset
+        opacity: 0
+        transform: translateY(100%)
+    
+        .active &
+            opacity: 1
+            transform: translateY(0)
+            animation: fadein .75s ease-in-out  1
+
+    &__title
+        font-weight: 700
+        color: rgba(255,255,0,1)
+
+    &__desc
+        font-weight: 300
+
+    &__control
+        $width: 1
+        position: absolute
+        display: grid
+        bottom: 0
+        left: 50%
+        width: percentage($width)
+        height: 70px
+        margin-left: percentage(($width * 0.5) * -1)
+        z-index: 1
+        background-color: rgba(0,0,0,.75)
+
+        &_primary
+            position: relative
+            display: flex
+            width: inherit
+            height: inherit
+            grid-row: 1
+            grid-column: 1
+            justify-content: space-between
+            align-items: center
+            font-size: .75rem
+
+        &_secondary
+            position: relative
+            display: flex
+            height: inherit
+            grid-row: 1
+            grid-column: 1
+            justify-self: center
+            justify-content: space-between
+            align-items: center
+            background-color: rgba(0,0,255,0)
+
+        &_item
+            $width: 60px
+            $gap: 10px
+            .-primary &
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 3.75em
+                height: 3.75em
+                font-weight: 700
+                background-color: $color-surface
+                cursor: pointer
+
+                @media(min-width: 740px)
+                    width: $width
+                    height: $width
+        
+            &.-pause,
+            &.-play
+                position: absolute
+                right: $gap
+            
+            &.-pause
+                right: $width + $gap * 2
+
+                .-paused &
+                    color: $color-surface
+                    background-color: rgba(255,255,0,1)
+                    background-color: rgba(0,255,255,1)
+                    // background-color: $color-secondary-dark
+
+            &.-prev,
+            &.-next
+                padding-top: 3.75em
+                padding-bottom: 3.75em
+                writing-mode: vertical-lr
+                text-orientation: sideways
+                text-transform: uppercase
+                letter-spacing: .1rem 
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+                @media(min-width: 740px)
+                    height: 9.5em
+
+            &.-nav
+                $ratio: 1.5em
+                width: $ratio
+                height: $ratio
+                margin-right: .75em
+                margin-left: .75rem
+                border-radius: 50% 
+                cursor: pointer
+                background-color: rgba(255,255,1)
+
+                &.active
+                    background-color: rgba(0,255,255,1)
+
+        &_label
+            display: flex
+            width: 100%
+            height: 100%
+            justify-content: center
+            align-items: center
+
+            .-next &
+                transform: rotate(-180deg)
+
+        &_progress
+            position: absolute
+            top: -5px
+            left: 0
+            width: 0
+            height: 5px
+            background-color: rgba(255,255,0,1)
+            transition: width .75s ease-in-out
+
+            .-paused &
+                background-color: rgba(0,255,255,1)
+
+    @media(min-width: 740px)
+        font-size: 7px
+
+    @media(min-width: 1099px)
+        font-size: 10px
+
+.control
+    $width: 0.25
+    position: absolute
+    display: flex
+    bottom: 0
+    left: 50%
+    width: percentage($width)
+    height: 33px
+    margin-left: percentage(($width * 0.5) * -1)
+    justify-content: space-between
+    z-index: 1
+    background-color: rgba(255,0,255,0)
+
+    &__item
+        cursor: pointer
