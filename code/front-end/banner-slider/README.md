@@ -5,7 +5,7 @@
 ## About
 
 Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
-### Features
+## Features
 
 * __Configurable__
 * __Reusable__
