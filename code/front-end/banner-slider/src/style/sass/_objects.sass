@@ -1,8 +1,24 @@
 .bl
     &-wrap,
+    &-conatiner,
     &-hero
         position: relative
     &-wrap
+
+        &:before
+            content: ""
+            display: block
+            position: fixed
+            top: -100%
+            left: -100%
+            width: 500%
+            height: 500%
+            background-image: url('../../assets/bg-noise.png')
+            background-repeat: repeat
+            background-position: 0 0
+            opacity: .65
+            animation: noise 9s steps(10) infinite
+    &-container
         max-width: 1440px
         margin: auto
     &-hero
