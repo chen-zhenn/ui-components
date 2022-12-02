@@ -1,9 +1,17 @@
+export interface imageAttr {
+  src: string
+  width: number
+  height: number
+}
+export interface images {
+  base: imageAttr;
+  mobile: imageAttr
+}
+
 export interface Iitems {
-  image: string;
+  images: images;
   title: string;
   desc: string;
-  width: number;
-  height: number;
   order: number;
 }
 
