@@ -11,9 +11,11 @@ Ui component totally reusable and configurable, without any additional libraries
 ## Features
 ### Features   
 
-:heavy_check_mark: __Configurable__   
-:heavy_check_mark: __Reusable__   
-:heavy_check_mark: __Responsive__      
+:ballot_box_with_check: __Configurable__ 
+
+:ballot_box_with_check: __Reusable__
+   
+:ballot_box_with_check: __Responsive__      
 
 ### How use
 
