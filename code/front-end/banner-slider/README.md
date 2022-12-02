@@ -9,12 +9,11 @@ Ui component totally reusable and configurable, without any additional libraries
 :globe_with_meridians: __Demo page__: :point_right: [here](https://chen-zhenn.github.io/ui-components)
 
 ## Features
+### Features   
 
-* __Configurable__
-* __Reusable__
-* __Adaptive to screen__  
-
-    > **Note:** Is not responsive style, and but an adaptive approach.
+:heavy_check_mark: __Configurable__
+:heavy_check_mark: __Reusable__
+:heavy_check_mark: __Responsive__  
 
 ### How use
 
