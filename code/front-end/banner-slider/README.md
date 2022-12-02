@@ -8,7 +8,7 @@ Ui component totally reusable and configurable, without any additional libraries
 
 :globe_with_meridians: __Demo page__: :point_right: [here](https://chen-zhenn.github.io/ui-components)
 
-### Features
+## Features
 
 * __Configurable__
 * __Reusable__
@@ -47,9 +47,8 @@ __2.__ Call the method which animate slider
 slide.animate()
 ```
 
-### :boom: Boom!
+## :boom: Boom!
 
----
 ### :rocket: Installation
 
 In root project folder from **banner-slider**. Execute following command:
