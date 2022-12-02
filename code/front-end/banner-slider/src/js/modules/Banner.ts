@@ -20,7 +20,9 @@ export abstract class Banner extends Controls {
   }
 
   mountImages(): void {
-    const itemsList = this.itemsList;
+    const screenWidth = window.innerWidth
+    const deskscreen = screenWidth > 640
+    const itemsList = this.itemsList.sort((a,b) => a.order - b.order);
     const $wrap = this.wrap;
     const $container = this.container;
     const $list = this._list;
@@ -38,6 +40,15 @@ export abstract class Banner extends Controls {
     $wrap?.insertAdjacentElement("afterbegin", $container);
 
     for (let item in itemsList) {
+      const { base, mobile } = itemsList[item]['images']
+      const { title, desc } = itemsList[item]
+
+      const srcImageAttr = deskscreen ? base.src : mobile.src
+      const widthImageAttr = deskscreen ? base.width : mobile.width
+      const heightImageAttr =  deskscreen ? base.height : mobile.height
+      const titleImageAttr = title
+      const descImageAttr = desc
+
       const $li = document.createElement("li");
       const $imageFig = document.createElement("figure");
       const $imageCap = document.createElement("figcaption");
@@ -51,14 +62,14 @@ export abstract class Banner extends Controls {
       $imageTitle.setAttribute("class", "banner__title");
       $imageDesc.setAttribute("class", "banner__desc");
 
-      $imgElem.setAttribute("src", `${itemsList[item].image}`);
-      $imgElem.setAttribute("width", `${itemsList[item].width}`);
+      $imgElem.setAttribute("src", `${srcImageAttr}`);
+      $imgElem.setAttribute("width", `${widthImageAttr}`);
       $imgElem.setAttribute("class", "banner__image");
       $imgElem.setAttribute("class", "banner__image");
 
       $list.insertAdjacentElement("beforeend", $li);
-      $imageTitle.insertAdjacentHTML("beforeend", `${itemsList[item].title}`);
-      $imageDesc.insertAdjacentHTML("beforeend", `${itemsList[item].desc}`);
+      $imageTitle.insertAdjacentHTML("beforeend", `${titleImageAttr}`);
+      $imageDesc.insertAdjacentHTML("beforeend", `${descImageAttr}`);
       $imageCap.insertAdjacentElement("beforeend", $imageTitle);
       $imageCap.insertAdjacentElement("beforeend", $imageDesc);
       $imageFig.insertAdjacentElement("beforeend", $imgElem);
@@ -71,6 +82,22 @@ export abstract class Banner extends Controls {
 
     addEventListener("load", (e) => $bannerItem[0].classList.add("active"))
 
+    addEventListener("resize", (e) => {
+      if(window.innerWidth > 640){
+        $images
+          .forEach(($el,index) => {
+            const { base } =  itemsList[index]['images']
+            this.setImageResponsiveAttr($el,base.src,base.width)
+        })
+      }else {
+        $images
+          .forEach(($el,index) => {
+            const { mobile } =  itemsList[index]['images']
+            this.setImageResponsiveAttr($el,mobile.src,mobile.width)
+        })
+      }
+    })
+
     for (let $image of $images) {
       $image.addEventListener("load", (e: Event) => {
         $image.parentElement?.classList.remove("-loading");
@@ -82,5 +109,10 @@ export abstract class Banner extends Controls {
     const $bannerItem = Array.from(document.querySelectorAll(".banner__item"))
     for(let $item of $bannerItem) $item.classList.remove("active")
     $bannerItem[index].classList.add("active")
+  }
+
+  private setImageResponsiveAttr(el: Element, src:string,width:number | string): void {
+    el.setAttribute("src", src)
+    el.setAttribute("width", `${width}`)
   }
 }

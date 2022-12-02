@@ -9,35 +9,71 @@ function init($wrap: HTMLElement | null): void {
 
   const items = [
     {
-      image: "assets/b-1.jpg",
+      images: {
+        base: {
+          src: "assets/b-1.jpg",
+          width: 1920,
+          height: 960
+        },
+        mobile: {
+          src: "assets/b-1-mobile.jpg",
+          width: 640,
+          height: 900
+        }
+      },
       title: "Cyberpunk City",
       desc: "A picture is worth a thousand words!",
-      width: 1920,
-      height: 960,
       order: 1
     },
     {
-      image: "assets/b-2.jpg",
+      images: {
+        base: {
+          src: "assets/b-2.jpg",
+          width: 1920,
+          height: 960
+        },
+        mobile: {
+          src: "assets/b-2-mobile.jpg",
+          width: 640,
+          height: 900
+        }
+      },
       title: "Lights City",
       desc: "A picture is worth a thousand words!",
-      width: 1920,
-      height: 960,
       order: 2
     },
     {
-      image: "assets/b-3.jpg",
+      images: {
+        base: {
+          src: "assets/b-3.jpg",
+          width: 1920,
+          height: 960
+        },
+        mobile: {
+          src: "assets/b-3-mobile.jpg",
+          width: 640,
+          height: 900
+        }
+      },
       title: "Surrealism art",
       desc: "A picture is worth a thousand words!",
-      width: 1920,
-      height: 960,
       order: 3
     },
     {
-      image: "assets/b-4.jpg",
+      images: {
+        base: {
+          src: "assets/b-4.jpg",
+          width: 1920,
+          height: 960
+        },
+        mobile: {
+          src: "assets/b-4-mobile.jpg",
+          width: 640,
+          height: 900
+        }
+      },
       title: "Concept art",
       desc: "A picture is worth a thousand words!",
-      width: 1920,
-      height: 960,
       order: 4
     },
   ];
