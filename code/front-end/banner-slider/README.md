@@ -5,7 +5,7 @@
 ## About
 
 Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
-## Features
+### Features
 
 * __Configurable__
 * __Reusable__
@@ -13,7 +13,7 @@ Ui component totally reusable and configurable, without any additional libraries
 
     > **Note:** Is not responsive style, and but an adaptive approach.
 
-## How use
+### How use
 
 __1.__ Create a instance of class Slider passing the following parameters:
 
@@ -47,7 +47,7 @@ slide.animate()
 ### :boom: Boom!
 
 ---
-## :rocket: Installation
+### :rocket: Installation
 
 In root project folder from **banner-slider**. Execute following command:
 
