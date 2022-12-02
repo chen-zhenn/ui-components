@@ -11,9 +11,9 @@ Ui component totally reusable and configurable, without any additional libraries
 ## Features
 ### Features   
 
-:heavy_check_mark: __Configurable__
-:heavy_check_mark: __Reusable__
-:heavy_check_mark: __Responsive__  
+:heavy_check_mark: __Configurable__   
+:heavy_check_mark: __Reusable__   
+:heavy_check_mark: __Responsive__      
 
 ### How use
 
