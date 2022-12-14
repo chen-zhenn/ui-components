@@ -50,7 +50,13 @@ slide.animate()
 
 ### :rocket: Installation
 
-In root project folder from **banner-slider**. Execute following command:
+In root project folder from **banner-slider**.
+
+Make a copy renaming the file tsconfig.json.sample to tsconfig.json.
+
+To Linux: `cp tsconfig.json.sample tsconfig.json`
+
+Run scripts:
 
 ```
 yarn install
