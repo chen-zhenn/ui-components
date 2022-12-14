@@ -3,8 +3,9 @@
   "packageManager": "yarn@3.2.4",
   "type": "module",
   "scripts": {
+    "cleardocs": "rm -rf ../../../docs/**",
     "copyassets": "mkdir dist; cp -R src/assets dist/",
-    "copydocs": "cp -a dist/* ../../../docs",
+    "copydocs": "cp -a dist/* ../../../docs/banner-slider",
     "cssbuild": "sass src/style/sass/main.sass dist/style/css/main.css --style compressed",
     "jsbuild": "esbuild src/js/index.ts --bundle --minify --outfile=dist/js/index.js",
     "htmlbuild": "yarn pug src/*.pug -o dist",
