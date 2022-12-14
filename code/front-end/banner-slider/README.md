@@ -4,7 +4,7 @@
 
 ## About
 
-Ui component totally reusable and configurable, without any additional libraries or frameworks. But built initially with a design adaptive approach. 
+Ui component totally reusable and configurable, without any additional libraries or frameworks.  
 
 :globe_with_meridians: __Demo page__: :point_right: [here](https://chen-zhenn.github.io/ui-components)
 ### Features   
