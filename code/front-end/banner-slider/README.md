@@ -6,7 +6,7 @@
 
 Ui component totally reusable and configurable, without any additional libraries or frameworks.  
 
-:globe_with_meridians: __Demo page__: :point_right: [here](https://chen-zhenn.github.io/ui-components)
+:globe_with_meridians: __Demo page__: :point_right: [here](https://chen-zhenn.github.io/ui-components/banner-slider)
 ### Features   
 
 :ballot_box_with_check: __Configurable__ 
