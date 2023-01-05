@@ -1,7 +1,6 @@
 {
   "name": "faq",
   "packageManager": "yarn@3.2.4",
-  "type": "module",
   "scripts": {
     "cleardocs": "rm -rf ../../../docs/**",
     "copyassets": "mkdir dist; cp -R src/assets dist/",
