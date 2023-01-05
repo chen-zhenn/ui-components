@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "lib": ["DOM","ES2015","ES5","ES6"],
+    "lib": ["DOM", "ES2015", "ES5", "ES6"],
+    "module": "es6",
     "moduleDetection": "auto",
-    "rootDir": "src/",                                   
-    "sourceMap": true,                                
-    "outDir": "dist/",                                   
-    "noEmitOnError": true,                            
-    "esModuleInterop": true,                                 
-    "forceConsistentCasingInFileNames": true,            
-    "strict": true,                                      
-    "skipLibCheck": true                                 
+    "rootDir": "src/",
+    "sourceMap": true,
+    "outDir": "dist/",
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   }
 }
