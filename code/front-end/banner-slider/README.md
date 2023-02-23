@@ -29,7 +29,7 @@ __time__: A number to timer of slider.
 const items = [{
     image: "image-path/file",
     title: "image title",
-    "desc": "image description",
+    desc: "image description",
     width: 1920,
     height: 960,
     order: 1
